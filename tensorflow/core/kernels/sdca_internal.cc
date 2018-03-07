@@ -44,8 +44,8 @@ void FeatureWeightsDenseStorage::UpdateDenseDeltaWeights(
     const Eigen::TensorMap<Eigen::Tensor<const double, 2, Eigen::RowMajor>>
         dual_matrix(normalized_bounded_dual_delta.data(), num_weight_vectors,
                     1);
-    const Eigen::array<Eigen::IndexPair<int>, 1> product_dims = {
-        Eigen::IndexPair<int>(1, 0)};
+    const Eigen::array<Eigen::IndexPair<int>, 1> product_dims = {{
+        Eigen::IndexPair<int>(1, 0)}};
     // This computes delta_w += delta_vector / \lamdba * N.
     deltas_.device(device) =
         (deltas_.cast<double>() +
@@ -205,8 +205,8 @@ const ExampleStatistics Example::ComputeWxAndWeightedExampleNorm(
       result.prev_wx[0] += prev_prediction();
       result.wx[0] += prediction();
     } else {
-      const Eigen::array<Eigen::IndexPair<int>, 1> product_dims = {
-          Eigen::IndexPair<int>(1, 1)};
+      const Eigen::array<Eigen::IndexPair<int>, 1> product_dims = {{
+          Eigen::IndexPair<int>(1, 1)}};
       const Eigen::Tensor<float, 2, Eigen::RowMajor> prev_prediction =
           regularization.EigenShrinkMatrix(dense_weights.nominals())
               .contract(dense_vector.RowAsMatrix(), product_dims);

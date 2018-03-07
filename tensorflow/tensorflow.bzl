@@ -847,6 +847,8 @@ def _cuda_copts():
       "@local_config_cuda//cuda:using_nvcc": ([
           "-nvcc_options=relaxed-constexpr",
           "-nvcc_options=ftz=true",
+          #"-nvcc_options=keep",
+          #"-nvcc_options=keep-dir=/Users/dtrebbien/Documents/src/tensorflow/nvcc_tmp",
       ]),
       "@local_config_cuda//cuda:using_clang": ([
           "-fcuda-flush-denormals-to-zero",

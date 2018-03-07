@@ -130,8 +130,8 @@ float RegressionSplitScore(
     const Eigen::Tensor<float, 1, Eigen::RowMajor>& right_sums,
     const Eigen::Tensor<float, 1, Eigen::RowMajor>& right_squares,
     int32 accumulator, int32 num_regression_dims, int i) {
-  Eigen::array<int, 1> offsets = {i * num_regression_dims + 1};
-  Eigen::array<int, 1> extents = {num_regression_dims - 1};
+  Eigen::array<int, 1> offsets = {{i * num_regression_dims + 1}};
+  Eigen::array<int, 1> extents = {{num_regression_dims - 1}};
   float left_count = splits_count_accessor(accumulator, i, 0);
   float right_count = totals_count_accessor(accumulator, 0) - left_count;
 
