@@ -120,11 +120,11 @@ def tf_workspace(path_prefix="", tf_repo_name=""):
   tf_http_archive(
       name = "eigen_archive",
       urls = [
-          "https://mirror.bazel.build/bitbucket.org/dtrebbien/eigen/get/374842a18727.tar.gz",
-          "https://bitbucket.org/dtrebbien/eigen/get/374842a18727.tar.gz",
+          "https://mirror.bazel.build/bitbucket.org/ksbg/eigen/get/374842a18727.tar.gz",
+          "https://bitbucket.org/ksbg/eigen/get/374842a18727.tar.gz",
       ],
-      sha256 = "fa26e9b9ff3a2692b092d154685ec88d6cb84d4e1e895006541aff8603f15c16",
-      strip_prefix = "dtrebbien-eigen-374842a18727",
+      sha256 = "16da2f2aa6899dc45f2ee39f21c1137805fc9c212f3a8f6b2a1c5fa5db659ac6",
+      strip_prefix = "ksbg-eigen-374842a18727",
       build_file = str(Label("//third_party:eigen.BUILD")),
   )
 
@@ -353,8 +353,8 @@ def tf_workspace(path_prefix="", tf_repo_name=""):
   tf_http_archive(
       name = "protobuf_archive",
       urls = [
-          "https://mirror.bazel.build/github.com/dtrebbien/protobuf/archive/50f552646ba1de79e07562b41f3999fe036b4fd0.tar.gz",
-          "https://github.com/dtrebbien/protobuf/archive/50f552646ba1de79e07562b41f3999fe036b4fd0.tar.gz",
+          "https://mirror.bazel.build/github.com/ksbg/protobuf/archive/50f552646ba1de79e07562b41f3999fe036b4fd0.tar.gz",
+          "https://github.com/ksbg/protobuf/archive/50f552646ba1de79e07562b41f3999fe036b4fd0.tar.gz",
       ],
       sha256 = "eb16b33431b91fe8cee479575cee8de202f3626aaf00d9bf1783c6e62b4ffbc7",
       strip_prefix = "protobuf-50f552646ba1de79e07562b41f3999fe036b4fd0",
